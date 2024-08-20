@@ -1,30 +1,25 @@
 
-class Animal(object):
-    def run(self):
-        print('Animal is running.')
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def call(self):
+        print("Hello, my name is " + self.name + " and I am " + str(self.age) + " years old.")
 
 
 class Dog(Animal):
-    def run(self):
-        print('Dog is running.')
+    def __init__(self, name, age, breed):
+        super().__init__(name, age)
+        self.breed = breed
 
+    def call(self):
+        print("Woof, my name is " + self.name + " and I am " + str(self.age) + " years old and I am a " + self.breed + ".")
 
-class Cat(Animal):
-    def run(self):
-        print('Cat is running.')
+if __name__ == '__main__':
+    my_animal = Animal("Fido", 5)
 
-
-dog = Dog()
-cat = Cat()
-
-
-def run_twice(animal):
-    animal.run()
-    animal.run()
-
-
-print(setattr(dog,'__name__',1))
-
-print(getattr(dog,'__name__'))
-
+    my_dog = Dog("Buddy", 3, "Labrador")
+    my_dog.call()
+    print(isinstance(my_animal, Dog))
 
