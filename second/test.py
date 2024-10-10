@@ -1,12 +1,10 @@
 
-import time
-
-start_time = time.time()
-
-time.sleep(2)
-
-end_time = time.time()
-
-print("Time taken:", end_time - start_time)
 
 
+mapping_dict = {
+    'ZQJC': 'ZQJC',
+    'ZQDM': 'ZQDM'
+}
+
+for key, value in mapping_dict.items():
+    print(key, value)
